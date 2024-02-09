@@ -69,4 +69,12 @@ class Array
     end
     count
   end
+
+  def my_map
+    new_arr = []
+    each do |element|
+      new_arr << yield(element)
+    end
+    new_arr
+  end
 end
