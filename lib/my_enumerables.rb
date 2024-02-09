@@ -77,4 +77,13 @@ class Array
     end
     new_arr
   end
+
+  def my_inject(initial = nil)
+    accumulator = initial
+    each do |element|
+      accumulator = yield(accumulator, element) if accumulator
+      accumulator ||= element unless accumulator
+    end
+    accumulator
+  end
 end
