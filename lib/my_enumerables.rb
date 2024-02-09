@@ -25,4 +25,15 @@ class Array
     end
     self
   end
+
+  def my_select
+    selected = []
+
+    each do |element|
+      if yield(element)
+        selected.push(element)
+      end
+    end
+    selected
+  end
 end
