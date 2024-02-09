@@ -36,4 +36,11 @@ class Array
     end
     selected
   end
+
+  def my_all?
+    each do |element|
+      return false unless yield(element)
+    end
+    true
+  end
 end
