@@ -57,4 +57,16 @@ class Array
     end
     true
   end
+
+  def my_count
+    count = 0
+    if block_given?
+      each do |element|
+        count += 1 if yield(element)
+      end
+    else
+      count = size
+    end
+    count
+  end
 end
