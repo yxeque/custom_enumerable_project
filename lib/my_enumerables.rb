@@ -43,4 +43,11 @@ class Array
     end
     true
   end
+
+  def my_any?
+    each do |element|
+      return true if yield(element)
+    end
+    false
+  end
 end
