@@ -50,4 +50,11 @@ class Array
     end
     false
   end
+
+  def my_none?
+    each do |element|
+      return false if yield(element)
+    end
+    true
+  end
 end
